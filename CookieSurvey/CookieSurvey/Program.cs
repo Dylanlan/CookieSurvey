@@ -160,22 +160,23 @@ namespace CookieSurvey
 
             IntPtr hWnd = IntPtr.Zero;
             int id = 0;
+            bool foundSubway = false;
 
             foreach (Process p in procs)
             {
-                if (p.MainWindowTitle.Length > 0)
-                {
-                    hWnd = p.MainWindowHandle;
-                    id = p.Id;
-                    //break;
-                }
-
                 if (p.MainWindowTitle == "SUBWAY Customer Survey - Google Chrome")
                 {
+                    foundSubway = true;
                     hWnd = p.MainWindowHandle;
                     id = p.Id;
                     break;
                 }
+            }
+
+            if (!foundSubway)
+            {
+                MessageBox.Show("Couldn't find a Subway cookies tab in google chrome!");
+                Environment.Exit(0);
             }
 
             bool isMinimized = IsIconic(hWnd);
