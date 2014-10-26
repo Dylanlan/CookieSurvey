@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.DatePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -84,7 +83,7 @@
             // 
             this.HourPicker.Location = new System.Drawing.Point(53, 124);
             this.HourPicker.Maximum = new decimal(new int[] {
-            12,
+            24,
             0,
             0,
             0});
